@@ -1,6 +1,6 @@
 
 $(function () {
-
+  //write text content into local storage
   $('button').click(function (e) {
     let ihour = $(this).parent().attr('id');
 
@@ -22,13 +22,13 @@ $(function () {
     } else {
       $(this).addClass('future')
     }
-
+    //show content in each box
     let hour = $(this).attr('id')
     if (localStorage.getItem(hour) != null) {
       $(this).children('textarea').val(localStorage.getItem(hour))
     }
 
   })
-
+  //show date on top
   $('#currentDay').text(today.format('dddd, MMMM D, YYYY'));
 });
